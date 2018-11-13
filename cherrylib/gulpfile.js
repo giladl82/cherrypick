@@ -1,10 +1,24 @@
-const gulp = require( 'gulp' )
-const shell = require( 'gulp-shell' )
-const path = require( 'path' );
+const gulp = require('gulp');
+const shell = require('gulp-shell');
+const watch = require('gulp-watch');
 
-gulp.task( 'default', () => {
-  return gulp.src( [ 'src/**/*.js', '!src/**/*.test.js' ], { read: false } )
-    .pipe( shell( [
-      "rollup <%= file.path %> --file <%= file.path.replace('src','lib') %> -f cjs -c -m",
-    ] ) )
-} )
+const globs = ['src/**/*.js', '!src/**/*.test.js'];
+const shellCmd = ["rollup <%= file.path %> --file <%= file.path.replace('src','lib') %> -f cjs -c -m"];
+
+gulp.task('build', () => {
+  return gulp
+    .src(globs, { read: false })
+    .pipe(shell(shellCmd));
+
+});
+
+gulp.task('watch', ['build'], () => {
+  return gulp.src(globs)
+    .pipe(watch(globs))
+    .pipe(shell(shellCmd));
+});
+
+
+
+gulp.task('default', ['build']);
+
