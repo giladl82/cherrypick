@@ -22,9 +22,6 @@
     "react-dom": "^16.6.1"
   },
   "devDependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
     "@babel/core": "^7.1.5",
     "@babel/plugin-external-helpers": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
@@ -36,6 +33,10 @@
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.5",
     "path": "^0.12.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "rollup": "^0.67.1",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
