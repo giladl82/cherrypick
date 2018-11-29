@@ -14,5 +14,20 @@
       }
     ],
     "@babel/react"
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["@babel/plugin-transform-runtime"],
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "useBuiltIns": "usage",
+            "modules": "commonjs"
+          }
+        ],
+        "@babel/react"
+      ]
+    }
+  }
 }
